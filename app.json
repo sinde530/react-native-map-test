@@ -38,6 +38,14 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow react-native-map-test to use your location for showing it on the map.",
+          "locationAlwaysPermission": "Allow react-native-map-test to use your location for showing it on the map.",
+          "locationWhenInUsePermission": "Allow react-native-map-test to use your location for showing it on the map."
+        }
       ]
     ],
     "experiments": {
