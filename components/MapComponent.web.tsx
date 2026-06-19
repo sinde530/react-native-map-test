@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { PhotoPin } from './MapComponent';
 
 interface City {
   name: string;
@@ -18,8 +19,10 @@ interface MapComponentProps {
   };
   pinnedLocation: { latitude: number; longitude: number } | null;
   cities: City[];
+  photos: PhotoPin[];
   onMapPress: (event: any) => void;
   onMarkerPress: (city: City) => void;
+  onPhotoMarkerPress: (photo: PhotoPin) => void;
 }
 
 export default function MapComponent({
@@ -28,7 +31,7 @@ export default function MapComponent({
   // Default to Center of South Korea
   const lat = pinnedLocation?.latitude ?? 36.5;
   const lon = pinnedLocation?.longitude ?? 127.8;
-  
+
   // Dynamic bounding box for OpenStreetMap
   const offset = pinnedLocation ? 0.01 : 3.0;
   const bbox = `${lon - offset}%2C${lat - offset}%2C${lon + offset}%2C${lat + offset}`;
